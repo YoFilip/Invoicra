@@ -3,11 +3,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-title: #171717;
+  --color-text: #333333;
+  --color-muted: #888888;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-title: var(--color-title);
+  --color-text: var(--color-text);
+  --color-muted: var(--color-muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,11 +22,14 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --color-title: #ededed;
+    --color-text: #cccccc;
+    --color-muted: #666666;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-mono);
 }
