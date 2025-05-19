@@ -1,4 +1,5 @@
 import TopBanner from '@/components/TopBanner';
+import { navigationTabs } from '@/lib/navigationTabs';
 
 export default function Header() {
   return (
@@ -12,10 +13,11 @@ export default function Header() {
           </div>
           <div className="hidden md:flex items-center space-x-6">
             <ul className="flex space-x-6 text-base font-medium text-gray-800">
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Pricing</a></li>
-              <li><a href="#">Integrations</a></li>
-              <li><a href="#">FAQ</a></li>
+              {navigationTabs.map(tab => (
+                <li key={tab.label}>
+                  <a href={tab.href}>{tab.label}</a>
+                </li>
+              ))}
             </ul>
             <button className="border border-gray-300 rounded px-4 py-1 text-base hover:bg-gray-50">
               Sign in
