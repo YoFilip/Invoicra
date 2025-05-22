@@ -1,6 +1,6 @@
-import TopBanner from '@/components/TopBanner';
-import { navigationTabs } from '@/lib/navigationTabs';
-import Link from 'next/link';
+import TopBanner from "@/components/TopBanner";
+import { navigationTabs } from "@/lib/navigationTabs";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -14,7 +14,7 @@ export default function Header() {
           </div>
           <div className="hidden md:flex items-center space-x-6">
             <ul className="flex space-x-6 text-sm font-medium text-gray-800">
-              {navigationTabs.map(tab => (
+              {navigationTabs.map((tab) => (
                 <li key={tab.label}>
                   <a href={tab.href}>{tab.label}</a>
                 </li>
@@ -26,7 +26,7 @@ export default function Header() {
             >
               Sign in
             </Link>
-                  <Link
+            <Link
               href="#"
               className="border border-gray-300 rounded px-4 py-1 text-sm bg-white text-text transition hover:bg-accent hover:text-white hover:border-accent"
             >
