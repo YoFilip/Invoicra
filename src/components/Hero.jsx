@@ -25,6 +25,9 @@ export default function Hero() {
                     </span>
                 </a>
             </div>
+            <div className="mt-20">
+                <div className="w-[60%] h-[60vh] bg-gray-100 m-auto rounded-2xl"></div>
+            </div>
         </section>
     );
 }
