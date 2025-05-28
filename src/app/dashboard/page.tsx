@@ -1,23 +1,57 @@
-"use client";
-import { logout } from "./actions";
+import { AppSidebar } from "@/components/app-sidebar"
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
+import { Separator } from "@/components/ui/separator"
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar"
 
-export default function DashboardPage() {
-  async function handleLogout(e) {
-    e.preventDefault();
-    await logout();
-  }
-
+export default function Page() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-4">Panel faktur</h1>
-      <p>Witaj w systemie wystawiania faktur! Tutaj pojawi się Twoje narzędzie do zarządzania fakturami.</p>
-      <a
-        href="#"
-        onClick={handleLogout}
-        className="border border-gray-300 rounded px-4 py-1 text-sm bg-white text-text transition hover:bg-accent hover:text-white hover:border-accent"
-      >
-        Log out
-      </a>
-    </div>
+    <SidebarProvider
+      style={
+        {
+          "--sidebar-width": "350px",
+        } as React.CSSProperties
+      }
+    >
+      <AppSidebar />
+      <SidebarInset>
+        <header className="bg-background sticky top-0 flex shrink-0 items-center gap-2 border-b p-4">
+          <SidebarTrigger className="-ml-1" />
+          <Separator
+            orientation="vertical"
+            className="mr-2 data-[orientation=vertical]:h-4"
+          />
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem className="hidden md:block">
+                <BreadcrumbLink href="#">All Inboxes</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator className="hidden md:block" />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Inbox</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </header>
+        <div className="flex flex-1 flex-col gap-4 p-4">
+          {Array.from({ length: 20 }).map((_, index) => (
+            <div
+              key={index}
+              className="bg-gray-200/50 aspect-video h-12 w-full rounded-lg"
+            />
+          ))}
+        </div>
+      </SidebarInset>
+    </SidebarProvider>
   )
 }

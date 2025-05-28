@@ -22,7 +22,7 @@ export function RegisterForm({
         const result = await action(formData)
         setLoading(false)
         if (result?.error) {
-            setError("Invalid email or password")
+            setError(result.error)
         } else {
             setError(null)
         }

@@ -88,7 +88,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-title: #ededed;
-    --color-text: #cccccc;
+    --color-text: #333333;
     --color-muted: #666666;
   }
 }

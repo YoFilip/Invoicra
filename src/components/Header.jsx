@@ -27,7 +27,7 @@ export default function Header() {
               Sign in
             </Link>
             <Link
-              href="#"
+              href="/register"
               className="border border-gray-300 rounded px-4 py-1 text-sm bg-white text-text transition hover:bg-accent hover:text-white hover:border-accent"
             >
               Sign up
